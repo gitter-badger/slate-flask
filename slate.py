@@ -47,8 +47,10 @@ s_dtq = None
 
 TITLE_TAGS = ['h1', 'h2', 'h3', 'h4']
 
-
-@app.route('/')
+@app.route('/admin', methods=[GET])
+def admin():
+    return render_template("admin.html")
+@app.route('/', methods=[GET])
 def index():
     global g_config
     global g_docs
